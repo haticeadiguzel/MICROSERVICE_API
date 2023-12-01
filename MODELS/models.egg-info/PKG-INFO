@@ -12,5 +12,3 @@ Description-Content-Type: text/markdown
 Requires-Dist: Flask-SQLAlchemy
 Requires-Dist: Flask
 Requires-Dist: redis
-
-# MODELS

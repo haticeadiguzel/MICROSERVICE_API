@@ -11,11 +11,7 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-# RUN pip install /app/MODELS/dist/models-0.0.1.tar.gz
-
-# RUN git clone https://github.com/haticeadiguzel/MODELS.git
-
-# RUN sudo python /app/MODELS/setup.py install
+RUN pip install /app/MODELS/dist/models-0.0.1.tar.gz
 
 COPY . .
 
