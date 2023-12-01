@@ -5,9 +5,9 @@ import redis
 app = Flask(__name__)
 app.config[
     "SQLALCHEMY_DATABASE_URI"
-] = "postgresql://hatice:ataturk@db_thread_container:5432/system"
+] = "postgresql://hatice:ataturk@microservice_db:5432/system"
 
-redis_host = "redis_thread_container"
+redis_host = "microservice_redis"
 redis_port = 6379
 redis_db = 0
 
@@ -22,3 +22,4 @@ class Thread(db.Model):
     output = db.Column(db.Text, nullable=True)
     directory = db.Column(db.Text, nullable=True)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
+
