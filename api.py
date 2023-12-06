@@ -3,7 +3,6 @@ from flask import request, jsonify, json
 from flask_migrate import Migrate
 from rq import Queue
 import platform
-import os
 
 queue = Queue(connection=conn)
 
@@ -88,8 +87,3 @@ def create():
     except Exception as e:
         print(f"Error in create: {e}")
         return jsonify({"status": "error", "message": str(e)})
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host="0.0.0.0", port=port)

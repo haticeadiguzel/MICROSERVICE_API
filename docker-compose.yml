@@ -1,11 +1,22 @@
 version: '3'
 services:
-  api:
+  api_5000:
     build:
       context: .
-    container_name: microservice_api
-    ports:
-      - "5000:5000"
+      dockerfile: Dockerfile.5000
+    container_name: microservice_api_5000
+    environment:
+      - FLASK_APP=api.py
+      - FLASK_ENV=development
+    volumes:
+      - api_volume:/app
+    restart: always
+  
+  api_6000:
+    build:
+      context: .
+      dockerfile: Dockerfile.6000
+    container_name: microservice_api_6000
     environment:
       - FLASK_APP=api.py
       - FLASK_ENV=development
